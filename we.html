@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launch Your Game on Web 3.0</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #09092C 100%, rgb(24, 24, 92) 100%);
+      font-family: 'Satoshi', sans-serif;
+      color: white;
+      font-family: 'Satoshi', sans-serif;
+      box-sizing: border-box;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      width: 1104px;
+      height: 80px;
+      margin: 20px auto;
+      background-color: #1B1C3C;
+      border-radius: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+    }
+
+    .navbar .menu li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: black;
+      cursor: pointer;
+      color: rgb(255, 254, 254);
+      background-color: white;
+    }
+
+    .get-started {
+      background-color: #1B1C3C;
+      border: 2px solid white;
+    }
+
+    /* Main content styles */
+    .main-content {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .main-content h1 {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 108px;
+      max-width: 944px;
+      margin: 0 auto;
+    }
+
+    .main-content h1 span {
+      color: #953f95;
+    }
+
+    .description {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 32.4px;
+      margin-top: 30px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #DADDD8;
+    }
+
+    /* Buttons below the text */
+    .cta-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gradient-btn {
+      background: linear-gradient(to bottom, #00008B, #000000);
+      padding: 8px 20px;
+    }
+
+    .docs-btn {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+    }
+
+    /* Backed by section */
+    .backed-by {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .backed-by p {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .logos {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .logos img {
+      width: 150px;
+      height: 50px;
+    }
+
+    /* Copy section */
+    .copy {
+      margin-top: 50px;
+      text-align: center;
+      max-width: 944px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 30px;
+      border-top: 1px solid white;
+    }
+
+    .copy p {
+      font-family: 'Satoshi', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 43.2px;
+    }
+
+    /* Section for added images */
+    .extra-images {
+      margin-top: 50px;
+      text-align: center;
+      
+    }
+
+    .extra-images img {
+      width: 1525px;
+      height: auto;
+      margin: 35px 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .afrin {
+      margin-top: 50px;
+      text-align: center;
+      
+    }
+    .afrin img{
+      width: 1590px;
+      height: auto;
+      margin: 35px 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 64.8px;
+            text-align: center;
+        }
+
+        /* Product Suite Section */
+        .product-suite {
+            width: 1192.62px;
+            height: 1027.83px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .product-suite-heading {
+            width: 438px;
+            height: 65px;
+            margin: 0 auto;
+        }
+
+        .product-suite-heading span {
+            background: linear-gradient(205.14deg, #3F37C9 30.04%, #4CC9F0 186.57%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .product-boxes {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .product-box {
+            width: 304px;
+            height: 350px;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            padding: 45px 22px;
+            margin-bottom: 25px;
+        }
+
+        .product-box img {
+            width: 260px;
+            height: 185px;
+            border-radius: 20px;
+        }
+
+        .product-box p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18.9px;
+            margin-top: 25px;
+        }
+
+        /* Build on your favorite chain */
+        .favorite-chain {
+            width: 699px;
+            height: 130px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .favorite-chain span {
+            background: linear-gradient(205.14deg, #3F37C9 30.04%, #4CC9F0 186.57%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Logos */
+        .logos {
+            width: 1030px;
+            height: 169px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logos img {
+            width: 203px;
+            height: 66px;
+        }
+
+        /* From Our Blog Section */
+        .blog-section {
+            width: 1264px;
+            height: 700px;
+            margin: 50px auto;
+            text-align: center;
+            border: 1px solid #fff;
+            padding: 20px;
+        }
+
+        .blog-heading {
+            width: 699px;
+            height: 65px;
+            margin: 0 auto 30px auto;
+        }
+
+        .blog-heading span {
+            background: linear-gradient(205.14deg, #3F37C9 30.04%, #4CC9F0 186.57%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-description {
+            width: 638px;
+            height: 64px;
+            margin: 0 auto 40px auto;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32.4px;
+        }
+
+        .blog-boxes {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-box {
+            width: 304px;
+            height: 418px;
+            border: 1px solid #fff;
+            border-radius: 48px;
+            padding: 20px;
+        }
+
+        .blog-box img {
+            width: 304px;
+            height: 171px;
+            border-radius: 20px;
+        }
+
+        .blog-box p {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18.9px;
+            margin-top: 20px;
+        }
+        .apple {
+            width: 1264px;
+            height: 600px;
+            position: absolute;
+            top: 5610px;
+            bottom: 5600px;
+            left: 96px;
+            opacity: 0.2;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box {
+            width: 304px;
+            height: 310px;
+            border-radius: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .content {
+            padding: 20px;
+            width: 264px;
+            height: 198px;
+            font-size: 16px;
+            line-height: 21.6px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-color: #1f1919;
+            padding: 16px;
+        }
+
+        .footer span {
+            font-weight: 500;
+        }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="c:\Users\afrin\Downloads\Group 12.jpg" alt="Logo">
+      </div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">LYNC Portal</a></li>
+        <li><a href="#">Request a demo</a></li>
+      </ul>
+      <button class="btn get-started">Get started &rarr;</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Launch Your Game on <span>Web 3.0</span> in Minutes</h1>
+    <p class="description">We help game developers to launch their game on Web 3.0, by keeping blockchain complexities aside with WebWorld SDKs!</p>
+    <div class="cta-buttons">
+      <button class="btn gradient-btn">Get started</button>
+      <button class="btn docs-btn">View Docs</button>
+    </div>
+    <div class="backed-by">
+      <p>Backed by</p>
+      <div class="logos">
+        <img src="https://s3-alpha-sig.figma.com/img/d0f1/fa05/c75ea6b22b9e8845470e5ddc2392aef9?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XGXEk1SLH4ajmsy66V5qxg9qtRzkeJE6nBWQpi1ZlkFUZAnScDfRZDvsSlKyuSAl6Hd8D8oAKwgoFIZbYaa3TIWzmyBuE9yNsiLCzfL8vmR-BPLteoEI0~r8dnTN9smLxI7qTlSvr8tEE8fZL0CF9O41SIsAYkzb7JDrb4gc5Zzz169TXUlQizjzCGqyBSUgQ2tukg-7ESzECA8AAtI7ObSwKAzFXgY~ksjr1xjXS49ENycEOZRTiWfOVnZAd2wcVAPluYdtcZfndUpu0jxUi~O6mGbasOJnjnnNQ4HvE8SF-LBa353qHizgBpLbD2LXseOzPCDmXdug5mcMwbEj2Q__" alt="Longhash">
+        <img src="https://s3-alpha-sig.figma.com/img/6d02/42bc/cb12b63990c168a2947fb279265e41a9?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FLPbZX2J3NPtC0K0rMAQVEjAaGXodmuVMKdVu6NzoJz5h68dTPSNjNyqZvHrynHhbeWVjsVPG~V8s6qNrOHDnHsE4AVy0McQrdjsKMVbz2E5qGMjavkvSwizQqfq08~Yg9zQ83RJjYkJOiN9RHvUbHUc4JGcwhvJjy-IgX3fmV~CAL8Fa9~cikpEhvPAQqeQ4udt90JDEAH5QoMtI~G0er7595DwV3AJoP65kuiLDSCvEtNCPvBKw0Y5pxlZJUV~gYH5HrNY9v60RdaZnV5SaMcHlX7zSvoY8npyXFGIzCfdIAvIT78tSFK6FSE3UPZPCFBmiKIuQMKUIz0BIs21Pg__" alt="Axelar">
+        <img src="https://s3-alpha-sig.figma.com/img/dbdc/7e9a/bfcd02ad161d771b33c514344895a2c0?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kbvMOr89u0RTvS~ukcIRRwFalNlkshufdUROL4gbex7K6sd-I8UmVd-SiRCjdAwJFyxNwT-qxBKZ9P5iXjqTr8j46cvmtTQ0hXCAsr-anmVjNmJO~d5Ms1DssDjKTfTsIU9xc0CiGqUz1T-5chpZgYck2sGJVoLFsjBfx~PrEqVyADKBVEYK0cqkqNUHhGHSKiS-ZVGWuKIYPnhoJbgs0jhiAl19pLd4fkYits3J-dsM0jNFxH1raNEdyPTqfZszi398AxmdPgmYhyl8xSUxkGnPAjn-FCdAaafgHWiwz3RUbG69p5bsYyj9obz7XyTrqQMSS6el3RTE-SqUBNfwow__" alt="Filecoin">
+      </div>
+    </div>
+  </div>
+
+  <!-- Copy Section -->
+  <div class="copy">
+    <p>LYNC provides a scalable infrastructure for launching web3 games, without hampering the gaming experience. So that you can deliver the next big hit!</p>
+  </div>
+
+  <!-- Extra Images Section -->
+  <div class="extra-images">
+    <img src="c:\Users\afrin\Downloads\Screenshot (1099).png" alt="Screenshot 1091">
+    <img src="C:\Users\afrin\OneDrive\Pictures\Screenshots\Screenshot (1100).png" alt="Screenshot 1096">
+  </div>
+  <div class="product-suite">
+    <div class="product-suite-heading">
+        <h2>Product <span>Suite</span></h2>
+    </div>
+
+    <div class="product-boxes">
+        <!-- Box 1 -->
+        <div class="product-box">
+            <img src="https://s3-alpha-sig.figma.com/img/4b18/9bcf/bab24607e206c43e443abe5e23b750c2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=luGv6ScbKV3ww9IbHwsthWiYU6DwWA1USJx7cWk0bsb4-WcFZEgSlOxyzj~A-3v8nACPPqOIWp1bBJZ0BXHQgHOE3S3pnVe-FCO~YQenEWbeq5wrhvTXinJ31a2DgtgY6yDiul08JVH-3PAM7E2vGlGG953FtMTaGRZ55pVfxFDGDOcECozkXkn1ImrP3JTayLcKshGcQTseYPpqsCM5T3vh6Yfsee7jG3-uvw4f4C0hbkB0GynQtMvsZEVQeq99A11ONRWszaXjit3t5yuDLe7mM6zs7YDd~0eSkTskgVddHOCs9lgB34bq4jP3IkUrVywTsyGW7Jq5YQ6DAM3yow__" alt="Product Image">
+            <p>Empowering developers to integrate account abstraction in their game, dapp, metaverse and more in minutes.</p>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="product-box">
+            <img src="https://s3-alpha-sig.figma.com/img/4b18/9bcf/bab24607e206c43e443abe5e23b750c2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=luGv6ScbKV3ww9IbHwsthWiYU6DwWA1USJx7cWk0bsb4-WcFZEgSlOxyzj~A-3v8nACPPqOIWp1bBJZ0BXHQgHOE3S3pnVe-FCO~YQenEWbeq5wrhvTXinJ31a2DgtgY6yDiul08JVH-3PAM7E2vGlGG953FtMTaGRZ55pVfxFDGDOcECozkXkn1ImrP3JTayLcKshGcQTseYPpqsCM5T3vh6Yfsee7jG3-uvw4f4C0hbkB0GynQtMvsZEVQeq99A11ONRWszaXjit3t5yuDLe7mM6zs7YDd~0eSkTskgVddHOCs9lgB34bq4jP3IkUrVywTsyGW7Jq5YQ6DAM3yow__" alt="Product Image">
+            <p>Empowering developers to integrate account abstraction in their game, dapp, metaverse and more in minutes.</p>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="product-box">
+            <img src="https://s3-alpha-sig.figma.com/img/4b18/9bcf/bab24607e206c43e443abe5e23b750c2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=luGv6ScbKV3ww9IbHwsthWiYU6DwWA1USJx7cWk0bsb4-WcFZEgSlOxyzj~A-3v8nACPPqOIWp1bBJZ0BXHQgHOE3S3pnVe-FCO~YQenEWbeq5wrhvTXinJ31a2DgtgY6yDiul08JVH-3PAM7E2vGlGG953FtMTaGRZ55pVfxFDGDOcECozkXkn1ImrP3JTayLcKshGcQTseYPpqsCM5T3vh6Yfsee7jG3-uvw4f4C0hbkB0GynQtMvsZEVQeq99A11ONRWszaXjit3t5yuDLe7mM6zs7YDd~0eSkTskgVddHOCs9lgB34bq4jP3IkUrVywTsyGW7Jq5YQ6DAM3yow__" alt="Product Image">
+            <p>Empowering developers to integrate account abstraction in their game, dapp, metaverse and more in minutes.</p>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="product-box">
+            <img src="https://s3-alpha-sig.figma.com/img/4b18/9bcf/bab24607e206c43e443abe5e23b750c2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=luGv6ScbKV3ww9IbHwsthWiYU6DwWA1USJx7cWk0bsb4-WcFZEgSlOxyzj~A-3v8nACPPqOIWp1bBJZ0BXHQgHOE3S3pnVe-FCO~YQenEWbeq5wrhvTXinJ31a2DgtgY6yDiul08JVH-3PAM7E2vGlGG953FtMTaGRZ55pVfxFDGDOcECozkXkn1ImrP3JTayLcKshGcQTseYPpqsCM5T3vh6Yfsee7jG3-uvw4f4C0hbkB0GynQtMvsZEVQeq99A11ONRWszaXjit3t5yuDLe7mM6zs7YDd~0eSkTskgVddHOCs9lgB34bq4jP3IkUrVywTsyGW7Jq5YQ6DAM3yow__" alt="Product Image">
+            <p>Empowering developers to integrate account abstraction in their game, dapp, metaverse and more in minutes.</p>
+        </div>
+
+        <!-- Box 5 -->
+        <div class="product-box">
+            <img src="https://s3-alpha-sig.figma.com/img/4b18/9bcf/bab24607e206c43e443abe5e23b750c2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=luGv6ScbKV3ww9IbHwsthWiYU6DwWA1USJx7cWk0bsb4-WcFZEgSlOxyzj~A-3v8nACPPqOIWp1bBJZ0BXHQgHOE3S3pnVe-FCO~YQenEWbeq5wrhvTXinJ31a2DgtgY6yDiul08JVH-3PAM7E2vGlGG953FtMTaGRZ55pVfxFDGDOcECozkXkn1ImrP3JTayLcKshGcQTseYPpqsCM5T3vh6Yfsee7jG3-uvw4f4C0hbkB0GynQtMvsZEVQeq99A11ONRWszaXjit3t5yuDLe7mM6zs7YDd~0eSkTskgVddHOCs9lgB34bq4jP3IkUrVywTsyGW7Jq5YQ6DAM3yow__" alt="Product Image">
+            <p>Empowering developers to integrate account abstraction in their game, dapp, metaverse and more in minutes.</p>
+        </div>
+
+        <!-- Box 6 -->
+        <div class="product-box">
+            <img src="https://s3-alpha-sig.figma.com/img/4b18/9bcf/bab24607e206c43e443abe5e23b750c2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=luGv6ScbKV3ww9IbHwsthWiYU6DwWA1USJx7cWk0bsb4-WcFZEgSlOxyzj~A-3v8nACPPqOIWp1bBJZ0BXHQgHOE3S3pnVe-FCO~YQenEWbeq5wrhvTXinJ31a2DgtgY6yDiul08JVH-3PAM7E2vGlGG953FtMTaGRZ55pVfxFDGDOcECozkXkn1ImrP3JTayLcKshGcQTseYPpqsCM5T3vh6Yfsee7jG3-uvw4f4C0hbkB0GynQtMvsZEVQeq99A11ONRWszaXjit3t5yuDLe7mM6zs7YDd~0eSkTskgVddHOCs9lgB34bq4jP3IkUrVywTsyGW7Jq5YQ6DAM3yow__" alt="Product Image">
+            <p>Empowering developers to integrate account abstraction in their game, dapp, metaverse and more in minutes.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Build on Your Favorite Chain Section -->
+<div class="favorite-chain">
+    <h2>With LYNC, build on your <span>favorite chain.</span></h2>
+</div>
+
+<!-- Logos Section -->
+<div class="logos">
+    <img src="https://s3-alpha-sig.figma.com/img/05b2/7e70/22612ec04465be574573d8c129924042?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XhHvuwc7F~oxY8dfCdaMMY~e074W3QFTWQ3qLnyxI58rj3NZR97pyjxP5cqD833JslEL1J9VCchxIJwnxFsyawroGfCT8HIfn~sxfShxP0OwkTxBZes46vQtshsXvf~VptrsPJGUccdvj-uYSH~n3hLd-xTVwSsals~2a6wZUHlU11pHB-wJHoZ0fxasg4~r0vFlcSsf8P8LQbuD2xpHXCvMX9nEKNaoFpVcYL75053~mBYcCxF3bgv12sXRpwLcZ1c0fuvpR8eRg9LjEySq3a56pSWkDD6ToAaZYLDZf2sp0uXgjZAmuPCb3TA2yljtC28ZtgpxXdUtmlRo6Swq7g__" alt="Logo">
+    <img src="https://s3-alpha-sig.figma.com/img/10e3/bd89/34c70fd14d6c8c56712cc8d392a6be45?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=U~I7wbQhe9-uZLUPYudoCdva4m2zIGR1mfPxRv4RIdUZEernBNS0OjAI8aMZrPwcESCcdm~Huyg~IWsGrdMg4G0EYEem2sk4JvUPPnI530FgujdAIQ~BWvAM1dZCveKyIeNZI-zGAcEW6cSSLmXEC6iT6IX-y8tzdhW4S~UPuQEaOLdbbxAxkoBgOvF4mQqM4g8uU6bxd7V~4luSxlRMmKDRJFGHbTWPgH2edLjB0ba1nji03nQM0xtJfapd~-9Z2C1PqpIEzyiBtz8gDeUmHvt42r6~tEPC4RZ7-o1gVHQ5MrocXx-pLY8mtY2UzCSXUq1pXnwRtqpY3caIyHX~5A__" alt="Logo">
+    <img src="https://s3-alpha-sig.figma.com/img/33eb/9619/fa7f0818a7086b6006e751b02f342aa2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PYYpgobtwJRtDv6-F9QPmI10cCqFPPxNVRB6dP1tCfHk-8qMrMcIMfgH7W9pfQz4vBM~si5dMRqLuw9vkB5Af67tzQ0Y0jj8MwiIEPIFAa2dVk4HrfTjTlMVVFInfTfjBHgIkXrrWP4qi6jDyhhuqTy3w1xeS0JxJuz10~mWcvhoLMwJOkv1mA-6Bhd3kII8A1DtPELTeqMcFPNBG1f9-eofFZlBB9hFZlPD0u5b3N5E~y006m~1DXV07qjW1HbLfnx8XkhifxyteIaKYJD8twKQ348hsY49uij1SfIfe-SKBw6RddHggjyzeQIVO3jAPnXZOjR6vQbo8CpylBNg2w__" alt="Logo">
+    <img src="https://s3-alpha-sig.figma.com/img/5673/25c0/de4f9e6f9856507de5cebb373f08eb46?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NTvG7--MAfPsLMfk-eidNRYPwfDdO~odZTWibPJxq-FHNDRYElMGIpwVxFd5Ch4VW3-BiySPvMzgYoJYKVVI4QQdIYT-2Fcglaes4Td8qIRGOvGOeVcfxDVgaDDplRfK4AUKcl8ZWwklS3tsSzLo3YkHyR-76FOzie6hsX7NarAwU79RrYuTMeOxaNJQwFirVIubFA9O87o7u7bbefJ4lIhjxHFk57yBECREQ73kPdvcNWDia8FMqoSfTbHGGpV7DmX07wPixWJZiQJx9Z~ewDVY3YbGBIN~5ZY2WZ1qUq8OFCD2Ozh~aAypJLbNBLvwcEnKA6pVSuK0cUXkGVV1fQ__" alt="Logo">
+    <img src="https://s3-alpha-sig.figma.com/img/2832/d688/ade51d824b8f49958b637caadde447a2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=a59fFUPZIucAijdJh~gkGeQl3M7GJC8VsleLrbuDHnqcHrwF3dcA0S2XqtL~A6goa0ZkbZl9jo4JwrHTQrJFBqQQr-s1QS7ty4P6MsHdafgqwB6iAMz4ohQ6AkAAnqWus-t0FloiJjlgvuzx9ySOYNWe4LERTLQoMqdqNM3M98cDVh0-qVJVrzN1RNZ1KBc0rVvjyxak0etu6D21Dn2XnZQU0wOZc4iduFI3phiZxtLbsnnaC6V83XDHX3Vfim~3fTqBPFJ6deFOoS6UB35kzQvtv2eZsP9G9sPEhLU7p4V2dbXoT7I8hHhC2UHhn8z8Uq~XrlUU9VuscaUUOLq8NQ__" alt="Logo">
+    <img src="https://s3-alpha-sig.figma.com/img/2832/d688/ade51d824b8f49958b637caadde447a2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=a59fFUPZIucAijdJh~gkGeQl3M7GJC8VsleLrbuDHnqcHrwF3dcA0S2XqtL~A6goa0ZkbZl9jo4JwrHTQrJFBqQQr-s1QS7ty4P6MsHdafgqwB6iAMz4ohQ6AkAAnqWus-t0FloiJjlgvuzx9ySOYNWe4LERTLQoMqdqNM3M98cDVh0-qVJVrzN1RNZ1KBc0rVvjyxak0etu6D21Dn2XnZQU0wOZc4iduFI3phiZxtLbsnnaC6V83XDHX3Vfim~3fTqBPFJ6deFOoS6UB35kzQvtv2eZsP9G9sPEhLU7p4V2dbXoT7I8hHhC2UHhn8z8Uq~XrlUU9VuscaUUOLq8NQ__" alt="Logo">
+    <img src="https://s3-alpha-sig.figma.com/img/ec76/ce3a/68c9260d69d979f7a0382fc4893a76c2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GGgOlxZrwdknsEbk0pxWIvYTtSO284QWRSErOAWgxG3TiE00h7bFH0OMfNryWdnZFkwUon8IyzBOQbHH6vxgk-MxEI6NyHiOTDZ2~uvsyxXr8aYVEWHDJUJltOBF-EiaW-gB1fPEB1soUjBAls2j2h8ZPoCBvs85wQfsvePwFJgKW6jp4Ofl5EseCMkI8wEzfpXgVdY2UrkQO4wm2Rzd1FyIVd9FFC9Gs74RT63FR04C8fTVk5lmoG7vrq1BoPWjHBWlaMtMXXKnkDX0XtlC2JEXsTdSCuH2ZnZZj~mI6wWpt00W-ABC0woF15xo~Np7lvK0PMriAIQpWVf7xAz5MA__" alt="Logo">
+    <img src="https://s3-alpha-sig.figma.com/img/910f/f9e2/c02d6980cc9cb0c1c61800211cd48aa2?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IEYRHKIviz-zx3yC6vbpLCdrHmZqgDG65PWrSEpAbeIidPwfkkG251Ol~hJYQIkyf93c12M62mjnZp1y8qXwN~qBRsmZL89VpCsxIUeumonE-NjidQVJUSMiJ7zaDV3Mw4~HUAScxFDMZPL7IKtyosuPu6WhyomuEmWxE2NX3CGK4JD2OI9viCHnpCFZNUARL3KZyfxRnVKQg6aqjS~3lUvvqn5SYUQlSNo2o1NoJABLP1C1TpBgtQtHNcOaSSU2SdUmh0Z73QqCW49pizo-zHcINhDZUsHOs1jPA5v7zY2fHJfLY9niWlHkNlQNUrW7dXizHglxCMDN9WsuSYcmlA__" alt="Logo">
+</div>
+
+<!-- From Our Blog Section -->
+<div class="blog-section">
+    <div class="blog-heading">
+        <h2>From our <span>Blog</span></h2>
+    </div>
+
+    <div class="blog-description">
+        Level Up Your Web3 Gaming Experience: Explore Our Blog for Insights, Tips, and Innovations in Gaming SDKs!
+    </div>
+
+    <div class="blog-boxes">
+        <!-- Blog Box 1 -->
+        <div class="blog-box">
+            <img src="https://s3-alpha-sig.figma.com/img/0fbb/7420/7c5ddafcd302089a206f32175626e585?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LEDWp8jDy2cXrFTC1fXpw5Ez9KzwRv48A6QYLJ0umWVo0HsfGbpgX6z5bZDf8Gf3eUNsxsZcvWVNHTPcfurgjWtB-oT~VWYu1cav-bB0GTFXJs2rFI41-Cwe~ijzxfmEyzyb9sAhn6vqAzn3pJkbFqCZIQVB5VfYAM1s33cCBVZvzZabfoRfOLga2WvjzDYRExRJXD-BORqXm23NNF7cwRyoim6YzkzWD75Ii6A3YM-EugbALtSRMmAWnOR~D9sTDkKUZJE3wy0iNc5UW1p3UuCQ8IiPHaRNWjHV7uDx6GlCip-xeRz63y8aRpHL0d9C0HSbqeJ25W7yRW0CK4~N~Q__" alt="Blog Image">
+            <p>LYNC teamed up with Astar Network to effortlessly bring the next billion gamers into Web3 🎮</p>
+            <p>LYNC joins forces with Astar Network to allow game developers and studios to launch games in just a few minutes using LYNC’s SDK and infrastructure.</p>
+            
+        </div>
+
+        <!-- Blog Box 2 -->
+        <div class="blog-box">
+            <img src="https://s3-alpha-sig.figma.com/img/0fbb/7420/7c5ddafcd302089a206f32175626e585?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LEDWp8jDy2cXrFTC1fXpw5Ez9KzwRv48A6QYLJ0umWVo0HsfGbpgX6z5bZDf8Gf3eUNsxsZcvWVNHTPcfurgjWtB-oT~VWYu1cav-bB0GTFXJs2rFI41-Cwe~ijzxfmEyzyb9sAhn6vqAzn3pJkbFqCZIQVB5VfYAM1s33cCBVZvzZabfoRfOLga2WvjzDYRExRJXD-BORqXm23NNF7cwRyoim6YzkzWD75Ii6A3YM-EugbALtSRMmAWnOR~D9sTDkKUZJE3wy0iNc5UW1p3UuCQ8IiPHaRNWjHV7uDx6GlCip-xeRz63y8aRpHL0d9C0HSbqeJ25W7yRW0CK4~N~Q__" alt="Blog Image">
+            <p>LYNC teamed up with Astar Network to effortlessly bring the next billion gamers into Web3 🎮</p>
+            <p>LYNC joins forces with Astar Network to allow game developers and studios to launch games in just a few minutes using LYNC’s SDK and infrastructure.</p>
+        </div>
+
+        <!-- Blog Box 3 -->
+        <div class="blog-box">
+            <img src="https://s3-alpha-sig.figma.com/img/0fbb/7420/7c5ddafcd302089a206f32175626e585?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LEDWp8jDy2cXrFTC1fXpw5Ez9KzwRv48A6QYLJ0umWVo0HsfGbpgX6z5bZDf8Gf3eUNsxsZcvWVNHTPcfurgjWtB-oT~VWYu1cav-bB0GTFXJs2rFI41-Cwe~ijzxfmEyzyb9sAhn6vqAzn3pJkbFqCZIQVB5VfYAM1s33cCBVZvzZabfoRfOLga2WvjzDYRExRJXD-BORqXm23NNF7cwRyoim6YzkzWD75Ii6A3YM-EugbALtSRMmAWnOR~D9sTDkKUZJE3wy0iNc5UW1p3UuCQ8IiPHaRNWjHV7uDx6GlCip-xeRz63y8aRpHL0d9C0HSbqeJ25W7yRW0CK4~N~Q__" alt="Blog Image">
+            <p>LYNC teamed up with Astar Network to effortlessly bring the next billion gamers into Web3 🎮</p>
+            <p>LYNC joins forces with Astar Network to allow game developers and studios to launch games in just a few minutes using LYNC’s SDK and infrastructure.</p>
+        </div>
+    </div>
+</div>
+<div class="apple">
+    <div class="box">
+        <div class="content">
+            Absolutely blown away by the capabilities of this company's Web3 gaming SDK! Integrating it into my project was seamless, and the innovative tools provided took my game to the next level. The support team was incredibly responsive and helpful throughout the process. Highly recommended!
+        </div>
+        <div class="footer">
+            <span>ALEX GEORGE</span>
+        </div>
+    </div>
+    <div class="box">
+        <div class="content">
+            Absolutely blown away by the capabilities of this company's Web3 gaming SDK! Integrating it into my project was seamless, and the innovative tools provided took my game to the next level. The support team was incredibly responsive and helpful throughout the process. Highly recommended!
+        </div>
+        <div class="footer">
+            <span>ALEX GEORGE</span>
+        </div>
+    </div>
+    <div class="box">
+        <div class="content">
+            Absolutely blown away by the capabilities of this company's Web3 gaming SDK! Integrating it into my project was seamless, and the innovative tools provided took my game to the next level. The support team was incredibly responsive and helpful throughout the process. Highly recommended!
+        </div>
+        <div class="footer">
+            <span>ALEX GEORGE</span>
+        </div>
+    </div>
+</div>
+<div class="afrin img"></div>
+    <img src="C:\Users\afrin\OneDrive\Pictures\Screenshots\Screenshot (1106).png" alt="Screenshot 1091">
+    <img src="C:\Users\afrin\OneDrive\Pictures\Screenshots\Screenshot (1107).png" alt="Screenshot 1091">
+    <img src="C:\Users\afrin\OneDrive\Pictures\Screenshots\Screenshot (1108).png" alt="Screenshot 1091">
+  </div>
+
+
+</body>
+</html>
